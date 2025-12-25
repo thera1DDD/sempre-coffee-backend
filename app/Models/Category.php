@@ -30,6 +30,14 @@ class Category extends Model
 
     // App\Models\Category.php
 
+    public static function withDishes()
+    {
+        return self::query()
+            ->with('dishes') // Эджер-загрузка блюд
+            ->withCount('dishes')
+            ->withMin('dishes', 'price')
+            ->withMax('dishes', 'price');
+    }
 
 
 }
