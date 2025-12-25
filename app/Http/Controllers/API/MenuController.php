@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Dishes;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -13,6 +14,6 @@ class MenuController extends Controller
     }
 
     public function getDishesByCategory($categoryId){
-        return Category::getCategoryWithDishesAndStats($categoryId);
+        return Dishes::getCategoryWithDishesAndStats($categoryId);
     }
 }
