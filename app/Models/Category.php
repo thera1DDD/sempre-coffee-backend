@@ -39,5 +39,9 @@ class Category extends Model
             ->withMax('dishes', 'price');
     }
 
-
+    // Добавляем accessor для изображения
+    public function getImageAttribute($value)
+    {
+        return 'storage/' . $value;
+    }
 }

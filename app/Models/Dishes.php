@@ -25,4 +25,10 @@ class Dishes extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    // Добавляем accessor для изображения
+    public function getImageAttribute($value)
+    {
+        return 'storage/' . $value;
+    }
 }
